@@ -1,25 +1,46 @@
----
 
-## Proje 2: Merge Sort Analizi
 
-**Verilen Dizi:** `[16, 21, 11, 8, 12, 22]`
+## Proje 3: Binary Search Tree (BST) Oluşturma
 
-### 1. Sıralama Aşamaları (Merge Sort)
+**Verilen Dizi:** `[7, 5, 1, 8, 3, 6, 0, 9, 4, 2]`
 
-Merge Sort, diziyi önce tek eleman kalana kadar böler (**Divide**), sonra sıralı bir şekilde birleştirir (**Conquer**). 
+### BST Oluşturma Aşamaları
 
-#### 1.1 Bölme (Divide) Aşaması
-1. `[16, 21, 11]` ve `[8, 12, 22]`
-2. `[16, 21]`, `[11]` ve `[8, 12]`, `[22]`
-3. `[16]`, `[21]`, `[11]` ve `[8]`, `[12]`, `[22]`
+BST kuralı: Düğümün solunda kendinden küçük, sağında kendinden büyük elemanlar bulunur.
 
-#### 1.2 Birleştirme (Merge) Aşaması
-1. `[16, 21]` ve `[11]` -> **`[11, 16, 21]`**
-2. `[8, 12]` ve `[22]` -> **`[8, 12, 22]`**
-3. `[11, 16, 21]` ve `[8, 12, 22]` -> **`[8, 11, 12, 16, 21, 22]`** (Sıralanmış dizi)
+1.  **7:** Diziye giren ilk eleman **Root** olur.
+    * **Root: 7**
 
-### 2. Big-O Gösterimi
-Merge Sort'un en iyi, ortalama ve en kötü durum zaman karmaşıklığı:
-* **$O(n \log n)$**
+2.  **5:** 7'den küçük, bu yüzden **7'nin solundan** devam edilir.
+    * 7'nin Solu: 5
 
----
+3.  **1:** 7'den küçük, 5'ten küçük, bu yüzden **5'in solundan** devam edilir.
+    * 5'in Solu: 1
+
+4.  **8:** 7'den büyük, bu yüzden **7'nin sağından** devam edilir.
+    * 7'nin Sağı: 8
+
+5.  **3:** 7'den küçük, 5'ten küçük, 1'den büyük, bu yüzden **1'in sağından** devam edilir.
+    * 1'in Sağı: 3
+
+6.  **6:** 7'den küçük, 5'ten büyük, bu yüzden **5'in sağından** devam edilir.
+    * 5'in Sağı: 6
+
+7.  **0:** 7'den küçük, 5'ten küçük, 1'den küçük, bu yüzden **1'in solundan** devam edilir.
+    * 1'in Solu: 0
+
+8.  **9:** 7'den büyük, 8'den büyük, bu yüzden **8'in sağından** devam edilir.
+    * 8'in Sağı: 9
+
+9.  **4:** 7'den küçük, 5'ten küçük, 1'den büyük, 3'ten büyük, bu yüzden **3'ün sağından** devam edilir.
+    * 3'ün Sağı: 4
+
+10. **2:** 7'den küçük, 5'ten küçük, 1'den büyük, 3'ten küçük, bu yüzden **3'ün solundan** devam edilir.
+    * 3'ün Solu: 2
+
+### Final BST Yapısı
+* **Root:** 7
+    * **Sol Kol:** 5 -> (Sol: 1 -> (Sol: 0, Sağ: 3 -> (Sol: 2, Sağ: 4))), (Sağ: 6)
+    * **Sağ Kol:** 8 -> (Sağ: 9)
+
+    
