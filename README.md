@@ -1,47 +1,47 @@
-📂 Proje 1: Insertion Sort
-Dizi: [22, 27, 16, 2, 18, 6]
+# Veri Yapıları ve Algoritmalar: Sorting Projesi
 
-1. Aşamalar (Sorting Steps): Insertion Sort, her adımda elemanı sol taraftaki sıralı alt dizideki doğru yerine yerleştirir.
+Bu çalışma Patika.dev Veri Yapıları ve Algoritmalar eğitimi kapsamında hazırlanmıştır.
 
-Adım 1: [22, 27, 16, 2, 18, 6] (27, 22'den büyük, yer değişmez)
+## Proje 1: Insertion Sort Analizi
 
-Adım 2: [16, 22, 27, 2, 18, 6] (16 araya girer, başa geçer)
+**Verilen Dizi:** `[22, 27, 16, 2, 18, 6]`
 
-Adım 3: [2, 16, 22, 27, 18, 6] (2 en başa yerleşir)
+### 1. Sıralama Aşamaları (Insertion Sort)
+Insertion Sort, her adımda elemanı sol taraftaki sıralı alt dizideki doğru yerine yerleştirir.
 
-Adım 4: [2, 16, 18, 22, 27, 6] (18; 16 ile 22 arasına girer)
+1. **Adım:** `[22, 27, 16, 2, 18, 6]` -> (22 ve 27 sıralı, değişim yok)
+2. **Adım:** `[16, 22, 27, 2, 18, 6]` -> (16 araya girer, en başa taşınır)
+3. **Adım:** `[2, 16, 22, 27, 18, 6]` -> (2 en küçük olduğu için en başa gelir)
+4. **Adım:** `[2, 16, 18, 22, 27, 6]` -> (18; 16 ile 22 arasına girer)
+5. **Adım:** `[2, 6, 16, 18, 22, 27]` -> (6; 2 ile 16 arasına girer ve dizi sıralanır)
 
-Adım 5: [2, 6, 16, 18, 22, 27] (6; 2 ile 16 arasına girer ve dizi sıralanır)
+### 2. Big-O Gösterimi
+* **O(n²)** (İç içe döngülerden dolayı karesel artış gösterir)
 
+### 3. Time Complexity (18 Sayısı İçin)
+Dizi sıralandıktan sonraki hali: `[2, 6, 16, 18, 22, 27]`
+18 sayısı dizinin ortasında yer aldığı için kapsamı:
+* **Average Case**
 
-Shutterstock
-2. Big-O Gösterimi:
+---
 
-O(n 
-2
- ) (İç içe iki döngüden dolayı)
+## Proje 2: Selection Sort Analizi
 
-3. Time Complexity (18 Sayısı İçin): Dizi sıralandıktan sonraki hali: [2, 6, 16, 18, 22, 27] 18 sayısı dizinin ortasında yer aldığı için:
+**Verilen Dizi:** `[7, 3, 5, 8, 2, 9, 4, 15, 6]`
 
-Cevap: Average Case
+### İlk 4 Adım
+Selection Sort, her adımda dizideki en küçük elemanı bulur ve baştaki sayı ile yer değiştirir.
 
-📂 Selection Sort (İlk 4 Adım)
-Dizi: [7, 3, 5, 8, 2, 9, 4, 15, 6]
+1. **Adım:** En küçük `2`. `7` ile yer değiştirir.
+   * `[2, 3, 5, 8, 7, 9, 4, 15, 6]`
+   
+2. **Adım:** Kalan kısımdaki en küçük `3`. Yeri doğrudur, değişim olmaz.
+   * `[2, 3, 5, 8, 7, 9, 4, 15, 6]`
+   
+3. **Adım:** Kalan kısımdaki en küçük `4`. `5` ile yer değiştirir.
+   * `[2, 3, 4, 8, 7, 9, 5, 15, 6]`
+   
+4. **Adım:** Kalan kısımdaki en küçük `5`. `8` ile yer değiştirir.
+   * `[2, 3, 4, 5, 7, 9, 8, 15, 6]`
 
-Selection Sort, her adımda kalan kısmın en küçük (minimum) elemanını bulur ve baştaki elemanla takas eder (swap).
-
-Adım 1: En küçük 2. 7 ile takas edilir.
-
-[2, 3, 5, 8, 7, 9, 4, 15, 6]
-
-Adım 2: Kalan kısımda (3'ten itibaren) en küçük 3. Yeri değişmez (kendiyle takas).
-
-[2, 3, 5, 8, 7, 9, 4, 15, 6]
-
-Adım 3: Kalan kısımda (5'ten itibaren) en küçük 4. 5 ile takas edilir.
-
-[2, 3, 4, 8, 7, 9, 5, 15, 6]
-
-Adım 4: Kalan kısımda (8'den itibaren) en küçük 5. 8 ile takas edilir.
-
-[2, 3, 4, 5, 7, 9, 8, 15, 6]
+---
