@@ -1,120 +1,62 @@
-Binary Search Tree (BST) Proje Analizi
+🌳 BST Visualizer & Logic Analyzer
 
-Veri Seti: [7, 5, 1, 8, 3, 6, 0, 9, 4, 2]
+Rowez Elite Series v2.0 — Binary Search Tree (İkili Arama Ağacı) yapısını derinlemesine inceleyen, adım adım işlem takibi ve görselleştirme sunan profesyonel bir simülatör.
 
-1. BST Mantığı ve Kurallar
+⚡ Proje Vizyonu
 
-Binary Search Tree yapısında her düğüm (node) için şu kural geçerlidir:
+Veri yapılarının temelini oluşturan BST algoritmasını statik bir yapıdan çıkarıp, çalışma anındaki (runtime) karar mekanizmalarını görselleştirmek ve analiz etmek için tasarlanmıştır.
 
-Sol Alt Ağaç: Düğüm değerinden küçük olanlar.
+🛠️ Teknik Özellikler
 
-Sağ Alt Ağaç: Düğüm değerinden büyük olanlar.
+Recursive Insertion Engine: Verileri hiyerarşik kurallara göre otomatik olarak konumlandırır.
 
-2. Adım Adım Oluşturma Süreci
+Step-by-Step Logger: Her bir elemanın kökten başlayarak izlediği yolu (Pathfinding) analiz eder.
 
-Adım
+Top-Down Tree Visualization: Ağaç yapısını terminal üzerinde hiyerarşik ve okunaklı bir formatta görselleştirir.
 
-Eleman
+Big O Analysis: İşlem karmaşıklığını ve düğüm istatistiklerini raporlar.
 
-İşlem
+🧬 BST Kuralları (Mekanik)
 
-Konum
+Simülatör aşağıdaki mantıksal operatörleri kullanır:
 
-1
+Root (Kök): Dizinin ilk elemanı sistemin merkezini oluşturur.
 
-7
+Left Branch: Değer < Düğüm ise sol kola yönlenir.
 
-İlk eleman
+Right Branch: Değer ≥ Düğüm ise sağ kola yönlenir.
 
-Root (Kök)
+🚀 Hızlı Başlangıç
 
-2
+Projeyi çalıştırmak için Python 3.x yeterlidir. Herhangi bir harici kütüphaneye ihtiyaç duymaz (Pure Logic).
 
-5
-
-5 < 7
-
-7'nin Solu
-
-3
-
-1
-
-1 < 7, 1 < 5
-
-5'in Solu
-
-4
-
-8
-
-8 > 7
-
-7'nin Sağı
-
-5
-
-3
-
-3 < 7, 3 < 5, 3 > 1
-
-1'in Sağı
-
-6
-
-6
-
-6 < 7, 6 > 5
-
-5'in Sağı
-
-7
-
-0
-
-0 < 7, 0 < 5, 0 < 1
-
-1'in Solu
-
-8
-
-9
-
-9 > 7, 9 > 8
-
-8'in Sağı
-
-9
-
-4
-
-4 < 7, 4 < 5, 4 > 1, 4 > 3
-
-3'ün Sağı
-
-10
-
-2
-
-2 < 7, 2 < 5, 2 > 1, 2 < 3
-
-3'ün Solu
-
-3. Görsel BST Yapısı
-
-          7
-        /   \
-       5     8
-      / \     \
-     1   6     9
-    / \
-   0   3
-      / \
-     2   4
+python bst_simulator.py
 
 
-4. Big O Gösterimi
+📊 Örnek Veri Seti Analizi
 
-Ekleme (Insertion): Ortalama $O(\log n)$, En kötü $O(n)$
+Giriş Dizisi: [7, 5, 1, 8, 3, 6, 0, 9, 4, 2]
 
-Arama (Search): Ortalama $O(\log n)$, En kötü $O(n)$
+Algoritma Çıktısı (Kısmi):
+
+      Root: [7]
+      L── [5]
+            L── [1]
+                  L── [0]
+                  R── [3]
+                        L── [2]
+                        R── [4]
+            R── [6]
+      R── [8]
+            R── [9]
+
+
+🛡️ Gelişmiş Analiz Verileri
+
+Time Complexity: $O(\log n)$ (Dengeli durumda).
+
+Space Complexity: $O(n)$.
+
+Traversal: Depth-First Search (DFS) tabanlı ekleme.
+
+Developed by Rowez - Coding for Performance & Security
